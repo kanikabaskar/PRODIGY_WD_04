@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ass/styles.css" />
+    <link rel="icon" href="logo.png" type="image/x-icon">
+
+    <title>Kanika B</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #fef9f9;
+        z-index: 99;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+      }
+
+      .nav__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 110px;
+        width: auto;
+        display: block;
+        margin: 0 20px;
+        padding: 0;
+        margin-right: auto;
+      }
+
+      nav ul {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+        transition: left 0.3s;
+        margin-left: auto;
+        justify-content: flex-start;
+        width: 60%;
+        padding-left: 50%;
+      }
+
+      ul li a {
+        padding: 0.5rem 1rem;
+        border: 2px solid transparent;
+        font-weight: 600;
+        color: #111111;
+        transition: 0.3s;
+        position: relative;
+        text-decoration: none;
+      }
+
+      ul li a:hover {
+        color: #f26980;
+      }
+
+      ul li a::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 3px;
+        text-decoration: none;
+        background: #ee0000;
+        transition: width 0.3s;
+        position: absolute;
+        right: 0;
+        bottom: -5px;
+      }
+
+      ul li a:hover::after {
+        width: 100%;
+      }
+
+      .section {
+        background-color: #f8e8e87f;
+        padding-top: 150px;
+        flex-grow: 1;
+      }
+
+      .section__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+      }
+      .section__container1 {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+      }
+
+      .section__container .content {
+        text-align: left;
+      }
+      .subtitle {
+        letter-spacing: 2px;
+        color: #250202;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .title {
+        font-size: 2.5rem;
+        font-weight: 400;
+        line-height: 3rem;
+        color: #000;
+        margin-bottom: 1rem;
+      }
+
+      .title span {
+        font-weight: 600;
+      }
+      .description {
+        line-height: 1.5rem;
+        color: #3d3c3c;
+        margin-bottom: 2rem;
+      }
+
+      .contact-info {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-info li {
+        margin: 10px 0;
+      }
+
+      .contact-info a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .contact-info a:hover {
+        text-decoration: overline;
+      }
+
+      .resume-image {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .image img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .action__btns {
+        margin-top: 20px;
+      }
+
+      .hire__me {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .hire__me:hover {
+        background-color: #f26980;
+      }
+
+      .download__btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .download__btn:hover {
+        background-color: #f26980;
+      }
+
+      @media (max-width: 750px) {
+        ul {
+          position: absolute;
+          width: 100%;
+          height: calc(100vh - 85px);
+          left: -100%;
+          top: 85px;
+          background-color: #ffffff;
+          flex-direction: column;
+          justify-content: center;
+          gap: 3rem;
+          transition: left 0.3s ease;
+        }
+
+        nav #check:checked ~ ul {
+          left: 0;
+        }
+
+        ul li a {
+          font-size: 1.25rem;
+          text-align: center;
+        }
+
+        .section__container {
+          padding: 10rem 1rem 5rem 1rem;
+          text-align: center;
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .image {
+          grid-area: 1/1/2/2;
+        }
+
+        .action__btns {
+          margin: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <div class="logo">
+          <a href="#home"><img src="logo.png" alt="Logo" /></a>
+        </div>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#resume"> My Resume</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="home" class="section">
+      <div class="section__container">
+        <div class="content">
+          <p class="subtitle">HEY THERE !!!</p>
+          <h1 class="title">
+            I'm <span>Kanika Baskar<br /></span> a Web Developer
+          </h1>
+          <p class="description">
+            Welcome to my portfolio!!! I'm Kanika B, a skilled and creative web developer with a passion for crafting beautiful, responsive, and user-friendly websites. I'm committed to continuous learning and adapting to new technologies, ensuring I stay ahead of the latest trends in web development.
+          </p>
+          <div class="action__btns">
+            <a href="#contact" class="hire__me">Hire Me</a>
+          </div>
+        </div>
+        <div class="image">
+          <img src="kani.gif" alt="Kanika B" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section__container1">
+        <div class="content">
+          <h1 class="title">About Me</h1>
+          <p class="description">
+            Welcome to my web developer portfolio! I'm Kanika B, a passionate and skilled web developer with a strong foundation in HTML, CSS, JavaScript, and various web development frameworks. My journey in web development began with a curiosity for technology, which has grown into a career focused on creating modern, responsive, and user-friendly web applications. With hands-on experience in projects like dynamic website creation and an Employee Skill Management system, I am committed to delivering high-quality work that meets client needs and exceeds expectations.
+            <br><br><br>
+            Currently pursuing a Bachelor of Engineering in Computer Science at Sona College of Technology, I am dedicated to continuous learning and staying updated with the latest trends in the industry. My academic achievements, combined with certifications in areas like Generative AI and Java Programming, reflect my commitment to excellence. I bring a blend of technical expertise and problem-solving skills to every project, ensuring innovative solutions and a seamless user experience.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="section">
+      <div class="section__container1">
+        <div class="content">
+          <h1 class="title">My Resume</h1>
+          <img src="resume.png" alt="Resume" class="resume-image" />
+          <div class="action__btns">
+            <a
+              href="Resume.pdf"
+              download="Kanika_B_Resume.pdf"
+              class="download__btn"
+              >Download Resume</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section__container">
+        <div class="content">
+          <h1 class="title">Contact Me</h1>
+          <p class="description">
+            Feel free to reach out to me through any of the following methods:
+          </p>
+          <ul class="contact-info">
+            <li>
+              Email:
+              <a href="mailto:kanikabaskar13@gmail.com">kanikabaskar13@gmail.com</a>
+            </li>
+            <li>Phone: <a href="tel:+91 8838482431">8838482431</a></li>
+            <li>
+              LinkedIn:
+              <a href="https://www.linkedin.com/in/kanika-b-405373255/" target="_blank"
+                >linkedin.com/in/kanika-b</a
+              >
+            </li>
+            <li>
+              GitHub:
+              <a href="https://github.com/kanikabaskar" target="_blank"
+                >github.com/kanikab</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+        <div class="footer__content">
+          <p>&copy; 2024 Kanika B. All Rights Reserved.</p>
+        </div>
+      </footer>
+  </body>
+</html>
